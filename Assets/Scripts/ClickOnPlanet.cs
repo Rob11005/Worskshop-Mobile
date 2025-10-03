@@ -12,7 +12,7 @@ public class ClickOnPlanet : MonoBehaviour
     RaycastHit hit;
     public CinemachineCamera cameraP1;
     public CinemachineCamera cameraP2;
-    public Canvas manageButton;
+    public GameObject manageButton;
     public string actualPlanet;
 
 
@@ -20,7 +20,7 @@ public class ClickOnPlanet : MonoBehaviour
     {
         cameraP1.enabled = false;
         cameraP2.enabled = false;
-        manageButton.enabled = false;
+        manageButton.SetActive(false);
     }
     public void OnTouch(InputAction.CallbackContext context)
     {
@@ -37,13 +37,13 @@ public class ClickOnPlanet : MonoBehaviour
             if (hit.collider.name == "Planète 1")
             {
                 cameraP1.enabled = true;
-                manageButton.enabled = true;
+                manageButton.SetActive(true);
                 actualPlanet = "Planète 1";
             }
             else if (hit.collider.name == "Planète 2")
             {
                 cameraP2.enabled = true;
-                manageButton.enabled = true;
+                manageButton.SetActive(true);
                 actualPlanet = "Planète 2";
             }
         }
@@ -54,7 +54,7 @@ public class ClickOnPlanet : MonoBehaviour
     {
         cameraP1.enabled = false;
         cameraP2.enabled = false;
-        manageButton.enabled = false;
+        manageButton.SetActive(false);
         actualPlanet = null;
     }
 
