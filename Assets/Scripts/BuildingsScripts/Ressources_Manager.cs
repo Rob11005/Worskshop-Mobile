@@ -37,10 +37,7 @@ public class Ressources_Manager : MonoBehaviour
         _ressources["seve"] = 0;
     }
 
-    public int GetResources(string name)
-    {
-        return _ressources.TryGetValue(name, out int value) ? value : 0;
-    }
+    public int GetResources(string name) => _ressources.TryGetValue(name, out int value) ? value : 0;
 
     public void AddResources(string name, int amount)
     {

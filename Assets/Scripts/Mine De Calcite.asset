@@ -18,9 +18,19 @@ MonoBehaviour:
   levels:
   - cost:
     - resourceName: Bois
-      amount: 0
+      amount: 5
     - resourceName: Resine
-      amount: 0
+      amount: 5
     production:
     - resourceName: Calcite
       amount: 2
+  - cost:
+    - resourceName: Bois
+      amount: 10
+    - resourceName: Resine
+      amount: 10
+    - resourceName: Calcite
+      amount: 10
+    production:
+    - resourceName: Calcite
+      amount: 3

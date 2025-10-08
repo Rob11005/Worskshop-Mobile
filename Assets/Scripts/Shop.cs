@@ -9,12 +9,14 @@ public class Shop : MonoBehaviour
     public Button button;
     public Image icon;
     public TextMeshProUGUI costText;
+    public TextMeshProUGUI nameText;
 
     private void Start()
     {
         icon.sprite = datas.buildingIcon;
         UpdateCostText();
 
+        if ()
         button.onClick.AddListener(OnBuyClicked);
     }
 
@@ -27,6 +29,7 @@ public class Shop : MonoBehaviour
             text += $"{r.resourceName} : {r.amount}\n";
         }
         costText.text = text;
+        nameText.text = datas.buildingName;
     }
 
     void OnBuyClicked()
@@ -35,11 +38,17 @@ public class Shop : MonoBehaviour
         {
             Ressources_Manager.Instance.SpendResources(datas.levels[0].cost);
             Buildings_Manager.Instance.PlaceBuilding(datas);
+            gameObject.SetActive(false);
         }
         else
         {
             Debug.Log("Pas assez de ressources");
         }
+    }
+
+    void OnUpgradeClicked()
+    {
+
     }
 
 
