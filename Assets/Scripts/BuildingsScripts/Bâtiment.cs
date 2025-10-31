@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Bâtiment : MonoBehaviour
 {
+    public static Bâtiment Instance;
     public BuildingsData data;
     public int b_level;
 
     public void Start()
     {
         StartProduction();
+        Instance = this;
+        Buildings_Manager.Instance.RegisterBuilding(this);
     }
     public void StartProduction()
     {
@@ -53,4 +56,9 @@ public class Bâtiment : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
+
+    private void OnDestroy()
+{
+    Buildings_Manager.Instance.UnregisterBuilding(this);
+}
 }

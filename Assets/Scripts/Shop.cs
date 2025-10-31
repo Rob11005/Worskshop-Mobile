@@ -16,8 +16,8 @@ public class Shop : MonoBehaviour
         icon.sprite = datas.buildingIcon;
         UpdateCostText();
 
-        if ()
-        button.onClick.AddListener(OnBuyClicked);
+        if (button.gameObject.name == "Buying")
+            button.onClick.AddListener(OnBuyClicked);
     }
 
     void UpdateCostText()
@@ -45,11 +45,4 @@ public class Shop : MonoBehaviour
             Debug.Log("Pas assez de ressources");
         }
     }
-
-    void OnUpgradeClicked()
-    {
-
-    }
-
-
 }

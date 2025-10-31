@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Buildings_Manager : MonoBehaviour
 {
     public static Buildings_Manager Instance;
     public Transform buildingParent;
+    public List<Bâtiment> allBuildings = new List<Bâtiment>();
 
     void Awake()
     {
@@ -19,4 +21,14 @@ public class Buildings_Manager : MonoBehaviour
         batiment.data = data;
         batiment.b_level = 0;
     }    
+
+    public void RegisterBuilding(Bâtiment building)
+    {
+        allBuildings.Add(building);
+    }
+
+    public void UnregisterBuilding(Bâtiment building)
+    {
+        allBuildings.Remove(building);
+    }
 }
