@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class BuildingButton : MonoBehaviour
 {
     public GameObject buildingPrefab;
-    public BuildingPlacementSystem placementSystem;
+    public BuildingPlacementSystemHex placementSystem;
 
     void Start()
     {
