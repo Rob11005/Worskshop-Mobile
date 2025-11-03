@@ -4,7 +4,7 @@ using UnityEngine;
 public class Ressources_Manager : MonoBehaviour
 {
     public static Ressources_Manager Instance;
-    private Dictionary<string, int> _ressources = new Dictionary<string, int>();
+    public Dictionary<string, int> _ressources = new Dictionary<string, int>();
 
     void Awake()
     {
@@ -46,6 +46,8 @@ public class Ressources_Manager : MonoBehaviour
             _ressources[name] = 0;
         }
         _ressources[name] += amount;
+
+        ShowingResources.Instance.UpdateResources();
     }
 
     public bool HasEnoughResources(List<ResourceAmount> cost)

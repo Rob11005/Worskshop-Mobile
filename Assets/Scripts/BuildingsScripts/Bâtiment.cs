@@ -52,8 +52,8 @@ public class Bâtiment : MonoBehaviour
     {
         while (true)
         {
-            Produce();
             yield return new WaitForSeconds(5f);
+            Produce();
         }
     }
 
