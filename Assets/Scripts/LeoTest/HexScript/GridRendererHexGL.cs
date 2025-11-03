@@ -3,10 +3,13 @@ using UnityEngine;
 [ExecuteAlways]
 public class GridRendererHexGL : MonoBehaviour
 {
+    [Header("References")]
     public IsoGridManagerHex grid;
+
+    [Header("Visuals")]
     public Color gridColor = new Color(0f, 1f, 0f, 0.25f);
     public float lineWidth = 1.2f;
-    public bool showGrid = false; // <- toggle contrôlé par le système de placement
+    public bool showGrid = false; // peut être activé/désactivé depuis ton système de placement
 
     private Material lineMaterial;
 
@@ -37,12 +40,18 @@ public class GridRendererHexGL : MonoBehaviour
         GL.Begin(GL.LINES);
         GL.Color(gridColor);
 
-        for (int x = 0; x < grid.width; x++)
+        int radius = grid.radius;
+        float cellSize = grid.cellSize;
+
+        for (int q = -radius; q <= radius; q++)
         {
-            for (int z = 0; z < grid.height; z++)
+            for (int r = -radius; r <= radius; r++)
             {
-                Vector3 center = grid.GetWorldPosition(x, z);
-                DrawHex(center, grid.cellSize * 0.5f);
+                int s = -q - r;
+                if (Mathf.Abs(s) > radius) continue; // garde la forme hexagonale "ronde"
+
+                Vector3 center = grid.GetWorldPosition(q, r);
+                DrawHex(center, cellSize);
             }
         }
 
@@ -54,7 +63,7 @@ public class GridRendererHexGL : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            float angle1 = Mathf.Deg2Rad * (60f * i - 30f);
+            float angle1 = Mathf.Deg2Rad * (60f * i - 30f); // flat-top
             float angle2 = Mathf.Deg2Rad * (60f * (i + 1) - 30f);
 
             Vector3 p1 = new Vector3(
@@ -73,3 +82,4 @@ public class GridRendererHexGL : MonoBehaviour
         }
     }
 }
+

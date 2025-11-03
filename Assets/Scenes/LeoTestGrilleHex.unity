@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 458743524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.096, y: 2.096, z: 2.096}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -497,7 +497,7 @@ Transform:
   m_GameObject: {fileID: 468900984}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16042997, y: -0.37686962, z: 0.066452265, w: 0.9098438}
-  m_LocalPosition: {x: 20, y: 10, z: 0}
+  m_LocalPosition: {x: 10, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1310,9 +1310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce3c9be93dd98c449bbec4fdbd1b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 20
-  height: 20
-  cellSize: 2
+  radius: 5
+  cellSize: 1
 --- !u!120 &1838974518
 LineRenderer:
   serializedVersion: 2
@@ -1435,7 +1434,7 @@ MonoBehaviour:
   grid: {fileID: 1838974517}
   gridColor: {r: 0, g: 1, b: 0, a: 0.25}
   lineWidth: 1.2
-  showGrid: 0
+  showGrid: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
