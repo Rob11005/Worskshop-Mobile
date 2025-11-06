@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI costText;
     public TextMeshProUGUI nameText;
+    public GameObject shop;
+    public GameObject shopButton;
 
     private void Start()
     {
@@ -38,7 +40,8 @@ public class Shop : MonoBehaviour
         {
             Ressources_Manager.Instance.SpendResources(datas.levels[0].cost);
             Buildings_Manager.Instance.PlaceBuilding(datas);
-            gameObject.SetActive(false);
+            shop.gameObject.SetActive(false);
+            shopButton.gameObject.SetActive(true);
         }
         else
         {
