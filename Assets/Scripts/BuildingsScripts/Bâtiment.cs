@@ -36,6 +36,7 @@ public class Bâtiment : MonoBehaviour
 
         var nextCost = data.levels[b_level + 1].cost;
         Ressources_Manager.Instance.SpendResources(nextCost);
+        ShowingResources.Instance.UpdateResources();
         b_level++;
     }
 
@@ -45,6 +46,7 @@ public class Bâtiment : MonoBehaviour
         foreach (var entry in prod)
         {
             Ressources_Manager.Instance.AddResources(entry.resourceName, entry.amount);
+            ShowingResources.Instance.UpdateResources();
         }
     }
 
@@ -52,8 +54,8 @@ public class Bâtiment : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
             Produce();
+            yield return new WaitForSeconds(5f);
         }
     }
 

@@ -6,6 +6,7 @@ public class UpgradeShop : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI costText;
     public Button upgradeButton;
 
     private Bâtiment linkedBuilding;
@@ -21,8 +22,13 @@ public class UpgradeShop : MonoBehaviour
 
     void RefreshUI()
     {
+        costText.text = "";
         nameText.text = linkedBuilding.data.buildingName;
         levelText.text = "Niveau " + (linkedBuilding.b_level + 1);
+        foreach (var r in linkedBuilding.data.levels[linkedBuilding.b_level + 1].cost)
+        {
+            costText.text += $"{r.resourceName} : {r.amount}\n";
+        };
     }
 
     void OnUpgradeClicked()
