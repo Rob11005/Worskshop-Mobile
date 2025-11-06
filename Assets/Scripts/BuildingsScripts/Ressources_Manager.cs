@@ -30,11 +30,7 @@ public class Ressources_Manager : MonoBehaviour
 
     private void IniatializeResources()
     {
-        _ressources["bois"] = 0;
-        _ressources["resine"] = 0;
-        _ressources["calcite"] = 0;
-        _ressources["azote"] = 0;
-        _ressources["seve"] = 0;
+        
     }
 
     public int GetResources(string name) => _ressources.TryGetValue(name, out int value) ? value : 0;
@@ -47,7 +43,6 @@ public class Ressources_Manager : MonoBehaviour
         }
         _ressources[name] += amount;
 
-        ShowingResources.Instance.UpdateResources();
     }
 
     public bool HasEnoughResources(List<ResourceAmount> cost)

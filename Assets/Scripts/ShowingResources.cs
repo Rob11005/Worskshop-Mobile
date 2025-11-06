@@ -40,7 +40,6 @@ public class ShowingResources : MonoBehaviour
         }
         else
         {
-            resourcesText.text = "";
             resourcesTextBackground.SetActive(false);
             resourcesTextGO.SetActive(false);
             isOpen = false;

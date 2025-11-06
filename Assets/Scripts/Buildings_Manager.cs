@@ -20,6 +20,8 @@ public class Buildings_Manager : MonoBehaviour
         Bâtiment batiment = buildingGO.GetComponent<Bâtiment>();
         batiment.data = data;
         batiment.b_level = 0;
+
+        ShowingResources.Instance.UpdateResources();
     }    
 
     public void RegisterBuilding(Bâtiment building)
