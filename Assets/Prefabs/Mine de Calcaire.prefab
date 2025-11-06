@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4706849755503983325}
   - component: {fileID: 560784740309507393}
   - component: {fileID: -2839797691976521511}
+  - component: {fileID: 3266714181810910068}
   m_Layer: 0
   m_Name: Mine de Calcaire
   m_TagString: Untagged
@@ -123,3 +124,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6e53e62889b265042bc5f2ed58c946f0, type: 2}
   b_level: 0
+--- !u!114 &3266714181810910068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420731413634935444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429fdfb27cc38df428338376b7e06fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingInfo: {fileID: 0}
+  button: {fileID: 0}
+  datas: {fileID: 0}
+  nameText: {fileID: 0}
+  prodText: {fileID: 0}
