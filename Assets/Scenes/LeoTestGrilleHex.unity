@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf10ce8cab3aefc4881dab96515cca4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 2902750500898094434, guid: 67fefce25ee719948a0225bd1e40e501, type: 3}
+  buildingPrefab: {fileID: 919132149155446097, guid: 8094072f848b0fe45b4414d0fa60612a, type: 3}
   placementSystem: {fileID: 1656499064}
 --- !u!1 &1228077872
 GameObject:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce3c9be93dd98c449bbec4fdbd1b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 7
   cellSize: 1
 --- !u!120 &1838974518
 LineRenderer:
@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1838974517}
-  gridColor: {r: 0, g: 1, b: 0, a: 0.25}
+  gridColor: {r: 1, g: 1, b: 1, a: 0.25}
   lineWidth: 1.2
   showGrid: 1
 --- !u!1660057539 &9223372036854775807
