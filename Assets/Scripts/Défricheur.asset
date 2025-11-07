@@ -15,6 +15,7 @@ MonoBehaviour:
   buildingName: "D\xE9fricheur"
   buildingIcon: {fileID: 0}
   prefab: {fileID: 8184665476306947463, guid: 5062421af382e5541a39afb3217fbc32, type: 3}
+  productionTime: 1
   levels:
   - cost:
     - resourceName: Bois

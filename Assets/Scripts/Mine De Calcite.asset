@@ -15,6 +15,7 @@ MonoBehaviour:
   buildingName: Mine de Calcaire
   buildingIcon: {fileID: 0}
   prefab: {fileID: 7420731413634935444, guid: 2794f86a5c1fe944a800c5d6d59ec5cf, type: 3}
+  productionTime: 2
   levels:
   - cost:
     - resourceName: Bois

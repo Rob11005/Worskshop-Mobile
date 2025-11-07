@@ -8,6 +8,7 @@ public class BuildingsData : ScriptableObject
     public string buildingName;
     public Sprite buildingIcon;
     public GameObject prefab;
+    public float productionTime;
 
     [System.Serializable]
     public class LevelInfo

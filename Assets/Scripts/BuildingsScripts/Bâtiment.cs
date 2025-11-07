@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Bâtiment : MonoBehaviour
     public static Bâtiment Instance;
     public BuildingsData data;
     public int b_level;
+    public TextMeshProUGUI upgradeFeedback;
 
     public void Start()
     {
@@ -18,7 +20,7 @@ public class Bâtiment : MonoBehaviour
     {
         StartCoroutine(ProductionLoop());
     }
-    
+
 
     public bool CanUpgrade()
     {
@@ -32,7 +34,23 @@ public class Bâtiment : MonoBehaviour
     public void Upgrade()
     {
         CanUpgrade();
-        if (!CanUpgrade()) return;
+        if (!CanUpgrade())
+        {
+            upgradeFeedback.text = "";
+            upgradeFeedback.text = "Pas assez de ressources";
+            upgradeFeedback.enabled = true;
+            StartCoroutine(ShowingUpgradeFeedback());
+            return;
+        }
+        else
+        {
+            upgradeFeedback.text = "";
+            upgradeFeedback.text = "Bâtiment amélioré !";
+            upgradeFeedback.enabled = true;
+            StartCoroutine(ShowingUpgradeFeedback());
+        }
+        
+
 
         var nextCost = data.levels[b_level + 1].cost;
         Ressources_Manager.Instance.SpendResources(nextCost);
@@ -55,12 +73,18 @@ public class Bâtiment : MonoBehaviour
         while (true)
         {
             Produce();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(data.productionTime);
         }
     }
 
     private void OnDestroy()
-{
-    Buildings_Manager.Instance.UnregisterBuilding(this);
-}
+    {
+        Buildings_Manager.Instance.UnregisterBuilding(this);
+    }
+
+    IEnumerator ShowingUpgradeFeedback()
+    {
+        yield return new WaitForSeconds(2f);
+        upgradeFeedback.enabled = false;
+    }
 }
