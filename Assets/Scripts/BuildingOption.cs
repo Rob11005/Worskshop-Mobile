@@ -7,10 +7,12 @@ public class BuildingOption : MonoBehaviour
 {
     public GameObject buildingInfo;
     public Button button;
+    public Button popButton;
     public BuildingsData datas;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI prodText;
     public TextMeshProUGUI costText;
+    public GameObject popImage;
     private Bâtiment bat;
 
     void Awake()
@@ -45,6 +47,11 @@ public class BuildingOption : MonoBehaviour
     public void OnClicked()
     {
         buildingInfo.SetActive(false);
+        popImage.SetActive(false);
     }
 
+    public void OnPopClicked()
+    {
+        popImage.SetActive(true);
+    }
 }
