@@ -73,7 +73,7 @@ public class Bâtiment : MonoBehaviour
         while (true)
         {
             Produce();
-            yield return new WaitForSeconds(data.productionTime);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
